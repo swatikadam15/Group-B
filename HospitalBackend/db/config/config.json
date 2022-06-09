@@ -1,0 +1,10 @@
+{
+  "development": {
+    "username": "postgres",
+    "password": "root",
+    "database": "hospital_api",
+    "host": "localhost",
+    "dialect": "postgres",
+    "port": 5432
+  }
+}

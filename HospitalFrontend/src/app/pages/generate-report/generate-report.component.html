@@ -1,0 +1,70 @@
+ <!-- <div id="print-section">
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">First Name</th>
+            <th scope="col">Last Name</th>
+            <th scope="col">Phone Number</th>
+            <th scope="col">Address</th>
+            <th scope="col">Appointment Date</th>
+            <th scope="col">Patient Details</th>
+            <th scope="col">Prescription</th>
+    
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of patientData">
+            <!-- <td>{{item.id}</td>  -->
+<!--     
+         <th scope="row">{{ item.id }}</th>
+            <td>{{ item.firstname }}</td>
+            <td>{{ item.lastname }}</td>
+            <td>{{ item.phonenumber }}</td>
+            <td>{{ item.address }}</td>
+            <td>{{ item.appointmentdate }}</td>
+            <td>{{ item.patientdetails }}</td>
+            <td>{{ item.prescription }}</td>
+    
+            <td>
+              <div >
+                
+              </div>
+              <button  (click)="print(item.id)"   type="button" class="btn btn-light">print</button>
+              <app-report [patientname]="item"></app-report> -->
+           <!-- <button printSectionId="print-section" 
+               ngxPrint >print</button>  -->
+            <!-- </td>
+          </tr>
+        </tbody>
+      </table>  
+ </div>  -->
+
+
+
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">First Name</th>
+        <th scope="col">Last Name</th> 
+        <th scope="col">Phone Number</th>
+        <th scope="col">Address</th>
+        <th scope="col">Appointment Date</th>
+        <th scope="col">Patient Details</th>
+        <th scope="col">Prescription</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let patient of patientData">
+      <td> <app-report [patientname] = "patient" ></app-report></td> 
+      </tr>
+  
+    </tbody>
+   
+  </table>
+ 
+
+

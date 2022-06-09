@@ -1,0 +1,21 @@
+<div id="print-section">
+  <td>{{ patientname.id }}</td>
+  <td>{{ patientname.firstname }}</td>
+  <td>{{ patientname.lastname }}</td>
+  <td>{{ patientname.phonenumber }}</td>
+  <td>{{ patientname.address }}</td>
+  <td>{{ patientname.appointmentdate }}</td>
+  <td>{{ patientname.patientdetails }}</td>
+  <td>{{ patientname.prescription }}</td>
+  
+</div>
+
+
+
+<td>
+  <button printSectionId="print-section"  ngxPrint type="button" class="btn btn-light">
+    print
+  </button>
+  <!-- <button printSectionId="print-section" 
+               ngxPrint >print</button>  -->
+</td>

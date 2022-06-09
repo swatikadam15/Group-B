@@ -1,0 +1,102 @@
+<div class="appointmetn-form">
+  <table class="table">
+    <!-- <div>
+      <input   class="form-control" type="text" name="phonenumber" 
+      [(ngModel)]="phonenumber" (ngModelChange)="Search()" placeholder="Enter Your Phone Number to search">
+    </div> -->
+  
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">First Name</th>
+        <th scope="col">Last Name</th>
+        <th scope="col">Phone Number</th>
+        <th scope="col">Address</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of patientData">
+        <!-- <td>{{item.id}</td> -->
+
+        <th scope="row">{{ item.id }}</th>
+        <td>{{ item.firstname }}</td>
+        <td>{{ item.lastname }}</td>
+        <td>{{ item.address }}</td>
+        <td>{{ item.phonenumber }}</td>
+        <td>
+          <span (click)="getsinglePatientDetails(item.id)"
+            >Generate Report</span
+          >
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <form [formGroup]="bookappoinmentForm">
+    <div class="form-control">
+      <label>First Name</label>
+      <input
+        type="text"
+        [readonly]="true"
+        placeholder="First Name"
+        formControlName="firstname"
+      />
+    </div>
+
+    <div class="form-control">
+      <label>Last Name</label>
+      <input
+        type="text"
+        [readonly]="true"
+        formControlName="lastname"
+        placeholder="Last Name"
+      />
+    </div>
+
+    <div class="form-control">
+      <label>Phone Number</label>
+      <input
+        [readonly]="true"
+        formControlName="phonenumber"
+        placeholder="Phone Number"
+      />
+    </div>
+    <div class="form-control">
+      <label>Address</label>
+      <input
+        [readonly]="true"
+        formControlName="address"
+        placeholder="Address"
+      />
+    </div>
+    <div class="form-control">
+      <label>Appointment Date</label>
+      <input formControlName="appointmentdate" placeholder="Appointment Date" />
+    </div>
+
+    <div class="form-control">
+      <label for="service">Patient Details</label>
+      <textarea
+        placeholder="Patient Details"
+        type="text"
+        formControlName="patientdetails"
+      ></textarea>
+    </div>
+    <div class="form-control">
+      <label for="service">Prescription</label>
+      <textarea
+        placeholder="Prescription"
+        type="text"
+        formControlName="prescription"
+      ></textarea>
+    </div>
+
+    <div class="btn">
+      <button type="submit" (click)="generatereports()" type="submit">
+        Generate Report
+      </button>
+    </div>
+
+  </form>
+</div>
+
