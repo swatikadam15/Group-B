@@ -26,6 +26,7 @@ ngOnInit(): void {
   }
   
 print(id:any){
+  localStorage.setItem("patientid",id)
 
 }
 

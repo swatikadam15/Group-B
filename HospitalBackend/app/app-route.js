@@ -19,7 +19,7 @@ Router.get("/patient/getallreport",ReportGenerateController.findAll)
 
 //Doctor Login API
 
-Router.post("/doctorlogin", DoctorloginController.create);
+Router.get("/doctorlogin", DoctorloginController.findAll);
 
 
   app.use("/app", Router);

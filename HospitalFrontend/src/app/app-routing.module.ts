@@ -10,6 +10,7 @@ import { GalleryComponent } from './pages/gallery/gallery.component';
 import { HomeComponent } from './pages/home/home.component';
 import { PatientLoginComponent } from './pages/patient-login/patient-login.component';
 import { PatientRegistartionComponent } from './pages/patient-registartion/patient-registartion.component';
+import { ReportComponent } from './pages/report/report.component';
 
 
 const routes: Routes = [
@@ -26,7 +27,8 @@ const routes: Routes = [
   {path:'patientregistration',component:PatientRegistartionComponent},
   {path:'patientlogin',component:PatientLoginComponent},
   {path:'doctor',component:DoctorPageComponent},
-  {path:'bookappointment',component:BookAppointmentsComponent}
+  {path:'bookappointment',component:BookAppointmentsComponent},
+  {path:'report',component:ReportComponent}
 ];
 
 @NgModule({

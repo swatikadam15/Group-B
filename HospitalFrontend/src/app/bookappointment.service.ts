@@ -51,7 +51,7 @@ private isAutheticated=false
   logout(){
     this.isAutheticated=false;
     this.authStatusListener.next(false)
-    this.router.navigate(['/patientlogin'])
+    this.router.navigate(['/logindoctor'])
   }
  
   getuserid(){

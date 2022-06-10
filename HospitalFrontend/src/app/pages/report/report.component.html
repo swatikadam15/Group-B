@@ -1,12 +1,12 @@
-<div id="print-section">
-  <td>{{ patientname.id }}</td>
-  <td>{{ patientname.firstname }}</td>
-  <td>{{ patientname.lastname }}</td>
-  <td>{{ patientname.phonenumber }}</td>
-  <td>{{ patientname.address }}</td>
-  <td>{{ patientname.appointmentdate }}</td>
-  <td>{{ patientname.patientdetails }}</td>
-  <td>{{ patientname.prescription }}</td>
+<!-- <div id="print-section">
+  <td>{{ patientdetails.id }}</td>
+  <td>{{ patientdetails.firstname }}</td>
+  <td>{{ patientdetails.lastname }}</td>
+  <td>{{ patientdetails.phonenumber }}</td>
+  <td>{{ patientdetails.address }}</td>
+  <td>{{ patientdetails.appointmentdate }}</td>
+  <td>{{ patientdetails.patientdetails }}</td>
+  <td>{{ patientdetails.prescription }}</td>
   
 </div>
 
@@ -18,4 +18,48 @@
   </button>
   <!-- <button printSectionId="print-section" 
                ngxPrint >print</button>  -->
-</td>
+<!-- </td>  -->
+
+<div class="container" id="print-section" *ngIf="patientdetails">
+  <table class="table" style="overflow-x: auto;" >
+    <thead>
+      <tr>
+        <th>ID</th>
+
+        <th>Fist Name</th>
+
+        <th>Last Name</th>
+
+        <th>Phone Number</th>
+
+        <th>Location</th>
+        <th>Date</th>
+        <th>Patient Details</th>
+
+
+        <th>prescription</th>
+        <th>print</th>
+      </tr>
+    <tbody>
+      <tr>
+      <!-- <tr *ngFor = "let flower of flowerList"> -->
+      <!-- <div id="print-section"> -->
+   <td>{{ patientdetails.id }}</td> 
+  <td>{{ patientdetails.firstname }}</td>
+  <td>{{ patientdetails.lastname }}</td>
+  <td>{{ patientdetails.phonenumber }}</td>
+  <td>{{ patientdetails.address }}</td>
+
+
+  <td>{{ patientdetails.appointmentdate  |slice:0:10 }}</td>
+  <td>{{ patientdetails.patientdetails }}</td>
+  <td>{{ patientdetails.prescription }}</td>
+     <td><button  printSectionId="print-section" class="btn btn-light"  ngxPrint>Print
+     </button>
+    </tr>
+    </tbody>
+  </table>
+  <!-- <div *ngFor = "let item of flowerList">
+    <app-item [flower] = "item"></app-item>
+  </div> -->
+</div>

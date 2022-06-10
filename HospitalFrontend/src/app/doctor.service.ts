@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { filter } from 'rxjs/operators';
+import { IAdmin } from './IAdmin';
 
 
 @Injectable({
@@ -28,5 +29,8 @@ generatereport(data:any){
 }
 getallgeneratedreport(){
 return this.http.get("http://localhost:3000/app/patient/getallreport")
+}
+login(){
+  return this.http.get<IAdmin[]>("http://localhost:3000/app/doctorlogin")
 }
 }

@@ -19,3 +19,14 @@ exports.create = (req, res) => {
       });
     });
 };
+
+exports.findAll=(req,resp)=>{
+  console.log(req)
+  Doctorlogin.findAll()
+      .then(data=>resp.json(data))
+      .catch(err=>{
+          resp.status(500)
+            .send({message:err.message||
+              `Something went wrong`})
+      });
+};

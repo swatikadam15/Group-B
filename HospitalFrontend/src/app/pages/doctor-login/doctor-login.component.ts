@@ -7,6 +7,7 @@ import {
 } from '@angular/forms';
 import { Router } from '@angular/router';
 import { BookappointmentService } from 'src/app/bookappointment.service';
+import { DoctorService } from 'src/app/doctor.service';
 
 
 @Component({
@@ -17,24 +18,34 @@ import { BookappointmentService } from 'src/app/bookappointment.service';
 export class DoctorLoginComponent implements OnInit {
   constructor(
     private formbuilder: FormBuilder,
-    private doctor: BookappointmentService,
+    private doctor: DoctorService,
     private router:Router
   ) {}
   docotoLogin!: FormGroup;
   ngOnInit(): void {
     this.docotoLogin = this.formbuilder.group({
-      email: ['swati@gmail.com'],
-      password: ['kadam'],
+      Email: ['swatikadam09@gmail.com'],
+      password: ['kadam123'],
     });
   }
-  
+
   result: any;
   login() {
-    // this.doctor.doctorlogin(this.docotoLogin.value).subscribe((result) => {
-    //  alert('login successfully')
-     this.router.navigate(['/patientregistration']);
-    // }, error=>{
-    //   alert("please enter valid details");
-    // });
+    this.doctor.login().subscribe(res=>{
+      const user=res.find((a:any)=> {
+        return a.Email === this.docotoLogin.value.Email && a.password === this.docotoLogin.value.password
+      });
+      if(user){
+        alert("Login Success")
+        this.docotoLogin.reset();
+        this.router.navigateByUrl('/patientregistration');
+      }else{
+        alert("Please enter correct email id and password..!!");
+      }
+    },err=>{
+      alert("Something went wrong!!");
+    
+  })
+ 
   }
 }
