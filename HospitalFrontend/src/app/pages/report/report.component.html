@@ -1,25 +1,4 @@
-<!-- <div id="print-section">
-  <td>{{ patientdetails.id }}</td>
-  <td>{{ patientdetails.firstname }}</td>
-  <td>{{ patientdetails.lastname }}</td>
-  <td>{{ patientdetails.phonenumber }}</td>
-  <td>{{ patientdetails.address }}</td>
-  <td>{{ patientdetails.appointmentdate }}</td>
-  <td>{{ patientdetails.patientdetails }}</td>
-  <td>{{ patientdetails.prescription }}</td>
-  
-</div>
-
-
-
-<td>
-  <button printSectionId="print-section"  ngxPrint type="button" class="btn btn-light">
-    print
-  </button>
-  <!-- <button printSectionId="print-section" 
-               ngxPrint >print</button>  -->
-<!-- </td>  -->
-
+<!-- 
 <div class="container" id="print-section" *ngIf="patientdetails">
   <table class="table" style="overflow-x: auto;" >
     <thead>
@@ -42,8 +21,6 @@
       </tr>
     <tbody>
       <tr>
-      <!-- <tr *ngFor = "let flower of flowerList"> -->
-      <!-- <div id="print-section"> -->
    <td>{{ patientdetails.id }}</td> 
   <td>{{ patientdetails.firstname }}</td>
   <td>{{ patientdetails.lastname }}</td>
@@ -59,7 +36,26 @@
     </tr>
     </tbody>
   </table>
-  <!-- <div *ngFor = "let item of flowerList">
-    <app-item [flower] = "item"></app-item>
-  </div> -->
+
+</div> -->
+<div class="">
+  <div id="print-section">
+    <form class="report" >
+      First name: {{ patientdetails.firstname }} 
+      <br>
+      Last name: {{ patientdetails.lastname }}
+      <br>
+      Appointment Date:{{patientdetails.appointmentdate  |slice:0:10 }}
+      <br>
+       Patient Details:  {{ patientdetails.patientdetails }}
+       <br>
+       Prescription    : {{ patientdetails.prescription }}
+   </form>
+  
+  </div>
+</div>
+
+<div class="print">
+<button  printSectionId="print-section" class="btn btn-info" style="text-decoration: none; color: white;" ngxPrint>Print
+</button>
 </div>
